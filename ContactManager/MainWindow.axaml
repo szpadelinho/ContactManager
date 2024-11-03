@@ -5,5 +5,29 @@
         mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
         x:Class="ContactManager.MainWindow"
         Title="ContactManager">
-    Welcome to Avalonia!
+    <StackPanel Margin="10">
+        <StackPanel Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center">
+            <StackPanel Orientation="Horizontal">
+                <TextBox x:Name="Name" Watermark="Podaj swoje imię" Width="300" Margin="10"/>
+                <TextBox x:Name="Surname" Watermark="Podaj swoje nazwisko" Width="300" Margin="10"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <TextBox x:Name="Phone" Watermark="Podaj swój numer telefonu" Width="300" Margin="10"/>
+                <TextBox x:Name="Mail" Watermark="Podaj swój adres e-mail" Width="300" Margin="10"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
+                <ComboBox x:Name="ComboBoxFav" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="10" SelectionChanged="ComboBoxFav_OnSelectionChanged">
+                    <ComboBoxItem Content="Wszystko"/>
+                    <ComboBoxItem Content="Ulubione"/>
+                </ComboBox>
+                    <Button x:Name="AddContact" Content="Dodaj kontakt" Margin="10" HorizontalAlignment="Center" VerticalAlignment="Center" Click="AddContact_OnClick"/>
+                <ComboBox x:Name="ComboBoxFilter" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="10" SelectionChanged="ComboBoxFilter_OnSelectionChanged">
+                    <ComboBoxItem Content="Domyslnie"/>
+                    <ComboBoxItem Content="Imie"/>
+                    <ComboBoxItem Content="Nazwisko"/>
+                </ComboBox>
+            </StackPanel>
+        </StackPanel>
+        <ListBox x:Name="ContactList"/>
+    </StackPanel>
 </Window>
